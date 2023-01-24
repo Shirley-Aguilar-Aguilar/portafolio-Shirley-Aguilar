@@ -1,4 +1,15 @@
-<nav>
-  <li *ngFor="let section of sections">{{section | titlecase}}</li>
+<nav #list [ngClass]="{'nav-desktop': expansionPanel, 'nav-mobile':!expansionPanel}">
+  <li
+    *ngFor="let section of sections"
+    [routerLink]="section.split(' ').join('-')"
+  >
+    {{section | titlecase}}
+  </li>
 </nav>
+
+<div *ngIf="!expansionPanel" class="container-symbol" >
+  <h1 (click)="showNav(list)">&#8801;</h1>
+</div>
+
+
 
