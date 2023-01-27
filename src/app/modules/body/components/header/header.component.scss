@@ -1,100 +1,121 @@
-@use "_colors" as c;
+@use "_helpers" as h;
+
 :host {
-  display: flex;
-  background-color: white;
-  justify-content: center;
+  display:flex;
+  justify-content: space-between;
   align-items: center;
+  @include h.BorderAndShadow;
+  background-color: h.$yellowColor;
   height: 10vh;
   width: 100%;
-  border: 1px solid rgba(227,227,227, 1);
-  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  position:fixed;
+  top: 0;
+  padding: 0 5%;
+  figure {
+    height:8vh;
+    border-radius:8px;
+    img {
+      height:100%;
+      transition:0.2s;
+      cursor:pointer;
+    }
+
+  }
+  figure:first-child:hover {
+    box-shadow: 3px 3px 5px rgba(224, 224, 224, 0.59);
+    @include h.BorderAndShadow;
+  }
+
 }
 
 .container-symbol {
-  width:100%;
-  display:flex;
-  justify-content: flex-end;
-  h1 {
-    color: c.$greenColor;
+  i {
+    color: white;
     cursor: pointer;
-    margin-right: 10%;
-    @media (min-width: 500px) {
-      font-size: 40px;
-    }
   }
-  h1:hover {
-    color:black;
+
+  i:hover {
+    color: h.$letterColor;
   }
 }
 
 .nav-mobile {
-  position: absolute;
-  top:10vh;
-  background-color: c.$grayColor;
-  width:100vw;
-  z-index:2;
-  left:0;
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: flex-start;
+  background-color: white;
+  top: 10vh;
+  width: 100vw;
+  left: 0;
   height: 0;
+  position: inherit;
 
   li {
-    visibility: hidden;
+    @include h.FlexCenter;
+    @include h.Li;
     width: 100%;
-    list-style: none;
-    color: c.$greenColor;
-    font-weight: bolder;
-    display:flex;
-    justify-content: center;
-    align-items: center;
+    visibility: hidden;
     height: 16%;
     position: relative;
-    z-index:3;
+    z-index: 4;
+    color: h.$letterColor;
   }
 
   li:hover {
-    background-color: white;
-    border-radius: 8px;
+    background-color: h.$transparentColor;
     cursor: pointer;
-    color: black;
-    border: 1px solid rgba(227,227,227, 1);
-    box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+    color: white;
+    @include h.LiHover;
   }
 }
 
+
 .show-items {
-  height: 60%;
+  height:100%;
   transition: 0.4s;
+  display:flex !important;
   li {
     visibility: visible;
   }
 }
 
 .nav-desktop {
-  width:100%;
-  display:flex;
-  justify-content: center;
+  width: 50%;
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  transform: translate(35%, 0);
+  animation: slide 2s 1 linear;
+
   li {
-    width: 10%;
-    list-style: none;
-    color: c.$greenColor;
-    font-weight: bolder;
+    width: 20%;
+    color: white;
     text-align: center;
-    padding:16px 0;
+    padding: 16px 0;
+    @include h.Li;
+    @media (min-width: 700px) {
+      border-bottom: 2px solid transparent;
+    }
     @media (min-width: 1200px) {
       font-size: large;
-
     }
   }
 
   li:hover {
-    background-color: c.$grayColor;
-    border-radius: 8px;
-    cursor: pointer;
+    transition: 0.2s;
     color: black;
+    border-bottom: 1px solid h.$letterColor;
+    cursor: pointer;
+
   }
 }
 
-
+@keyframes slide {
+  from {
+    transform: translate(10%, -50%);
+  }
+  to {
+    transform: translate(35%, 0%);
+  }
+}

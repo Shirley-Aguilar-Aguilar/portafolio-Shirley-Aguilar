@@ -1,15 +1,33 @@
-<nav #list [ngClass]="{'nav-desktop': expansionPanel, 'nav-mobile':!expansionPanel}">
+<figure
+  routerLink = "/"
+  matRipple
+  [matRippleCentered]="true">
+  <img
+    src="assets/img/logo-white.png"
+    alt="white logo "
+  >
+</figure>
+
+<nav
+  #list
+  [ngClass]="{ 'nav-desktop': expansionPanel, 'nav-mobile': !expansionPanel }"
+>
+
   <li
     *ngFor="let section of sections"
     [routerLink]="section.split(' ').join('-')"
+    matRipple
+    [matRippleCentered]="true"
   >
-    {{section | titlecase}}
+    {{ section | titlecase }}
   </li>
 </nav>
 
-<div *ngIf="!expansionPanel" class="container-symbol" >
-  <h1 (click)="showNav(list)">&#8801;</h1>
-</div>
-
-
+<figure  class="container-symbol">
+  <i
+    (click)="showNav(list)" class="ri-stack-line ri-3x"
+    matRipple
+    [matRippleCentered]="true"
+  ></i>
+</figure>
 

@@ -1,4 +1,7 @@
+@use "_helpers" as h;
 @import "_colors";
+
+
 :host {
   display:flex;
   flex-direction: column;
@@ -6,30 +9,42 @@
   height: max-content;
   justify-content: center;
   align-items: center;
-  background-color: $grayColor;
+  margin-top:10vh;
+
+  h1{
+    font-size: 40px;
+    margin-top:5%;
+    font-family: 'Unbounded', cursive;
+    color:white;
+  }
 
 }
 .content {
   width:80%;
   height: 80%;
-  margin:10%;
+  margin:3%;
+  padding:2%;
   display:flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
   border-radius: 8px;
-
+  box-shadow: 0 2px 8px rgb(0 0 0 / 40%);
+  background-color: white;
   section {
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-size: x-large;
 
-    h1 {
-      margin: 10% 0;
-      color: $grayBlackColor;
+    h2 {
+      margin: 10% 0 5%;
+      color: white;
       text-align: center;
+    }
+    h4 {
+
     }
     @media (min-width: 700px) {
       padding:5%;
@@ -41,36 +56,41 @@
     align-items: center;
     justify-content: space-between;
     width:100%;
-    div {
-      font-size: 35px;
-      font-weight: bolder;
-      color: white;
-      background-color: black;
+    margin-top:5%;
+
+    figure {
+      border-radius:8px;
+      cursor:pointer;
+      @include h.BorderAndShadow;
+      border-radius: 50%;
       display:flex;
       justify-content: center;
       align-items: center;
-      width:90px;
-      height: 90px;
-      border-radius: 50%;
+      padding:8px;
+      background-color: h.$grayBackground;
     }
-
     img {
-      height: 90px;
+      height: 40px;
+      @media (min-width: 700px) {
+        height: 50px;
+      }
     }
 
-    img:nth-child(2){
-      margin:10px;
-      @media (min-width: 700px) {
-        margin:30px;
-      }
+    figure:hover {
+      box-shadow: 2px 5px 8px h.$greenShadow ;
+      transition: 0.4s;
     }
   }
 
   .avatar {
+    border-radius: 50%;
+    z-index:1;
+    object-fit: cover;
     height: 200px;
-    position: relative;
+    box-shadow: 2px 5px 10px h.$greenShadow ;
     @media (min-width: 700px) {
       height: 350px;
+      position: relative;
     }
   }
 

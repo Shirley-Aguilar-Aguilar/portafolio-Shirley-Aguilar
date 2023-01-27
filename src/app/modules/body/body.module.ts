@@ -10,6 +10,8 @@ import { AboutComponent } from './components/about/about.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ContactInformationComponent } from './components/contact-information/contact-information.component';
 import { SkillsComponent } from './components/skills/skills.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatRippleModule} from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { SkillsComponent } from './components/skills/skills.component';
     CommonModule,
     BodyRoutingModule,
     NgOptimizedImage,
-    RouterModule
+    RouterModule,
+    MatTooltipModule,
+    MatRippleModule
   ],
   providers: []
 })

@@ -9,10 +9,8 @@ import {
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  sections = ["home", "about", "skills", "portfolio", "contact me"];
+  sections = ["about", "skills", "portfolio", "contact me"];
   expansionPanel = false;
-
-  constructor(){}
 
   ngOnInit(): void {
     if (window.innerWidth > 700) {
@@ -26,8 +24,7 @@ export class HeaderComponent {
   }
 
   showNav(list:HTMLElement):void {
-
-   list.classList.toggle("show-items")
+    list.classList.toggle("show-items")
 
   }
 }

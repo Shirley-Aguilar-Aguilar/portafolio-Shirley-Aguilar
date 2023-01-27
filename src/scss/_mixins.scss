@@ -1,0 +1,20 @@
+@mixin BorderAndShadow {
+  border: 1px solid rgba(154, 154, 154, 0.69);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 50%);
+}
+
+@mixin FlexCenter {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin Li {
+  list-style: none;
+  font-weight: bolder;
+}
+
+@mixin LiHover {
+  @include BorderAndShadow;
+  cursor: pointer;
+}
