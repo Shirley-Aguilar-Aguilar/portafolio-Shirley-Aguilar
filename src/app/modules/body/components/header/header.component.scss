@@ -11,19 +11,20 @@
   position:fixed;
   top: 0;
   padding: 0 5%;
-  figure {
+
+  .logo {
     height:8vh;
     border-radius:8px;
     img {
       height:100%;
-      transition:0.2s;
       cursor:pointer;
     }
 
   }
-  figure:first-child:hover {
+  .logo:hover {
     box-shadow: 3px 3px 5px rgba(224, 224, 224, 0.59);
     @include h.BorderAndShadow;
+    transition: all 0.5s ease-out;
   }
 
 }
@@ -36,6 +37,7 @@
 
   i:hover {
     color: h.$letterColor;
+    transition: all 0.5s ease-out;
   }
 }
 
@@ -86,7 +88,8 @@
   justify-content: flex-end;
   align-items: center;
   transform: translate(35%, 0);
-  animation: slide 2s 1 linear;
+  transition: all 0.5s ease-out;
+  animation: slide 1s 1 linear;
 
   li {
     width: 20%;
@@ -107,15 +110,54 @@
     color: black;
     border-bottom: 1px solid h.$letterColor;
     cursor: pointer;
-
+    transition: all 0.5s ease-out;
   }
 }
 
 @keyframes slide {
   from {
-    transform: translate(10%, -50%);
+    transform: translate(10%, 0%);
   }
   to {
     transform: translate(35%, 0%);
   }
+}
+
+.container-logos {
+  position: fixed;
+  bottom: 0px;
+  width: 60px;
+  height:25%;
+  z-index: 10;
+  right:5%;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  figure {
+    @include h.FlexCenter;
+    i {
+      @include h.FlexCenter;
+      color: white;
+      cursor: pointer;
+      height:50px;
+      width:50px;
+      border-radius:50%;
+      background-color: h.$yellowColor;
+    }
+
+    i:hover {
+      color: h.$letterColor;
+      transition: all 0.5s ease-out;
+    }
+  }
+
+}
+
+.scroll-up {
+  position: fixed;
+  bottom: 0;
+  width: 60px;
+  height:5%;
+  z-index: 10;
+  left:50%;
 }

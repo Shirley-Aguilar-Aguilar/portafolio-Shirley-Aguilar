@@ -1,7 +1,9 @@
 <figure
   routerLink = "/"
   matRipple
-  [matRippleCentered]="true">
+  [matRippleCentered]="true"
+  class="logo"
+>
   <img
     src="assets/img/logo-white.png"
     alt="white logo "
@@ -31,3 +33,35 @@
   ></i>
 </figure>
 
+<section class="container-logos">
+  <figure  matTooltip="Curriculum vitae"
+           matTooltipPosition= left
+  >
+    <i class="ri-folder-user-line ri-2x"
+       matRipple
+       [matRippleCentered]="true"></i>
+  </figure >
+
+  <figure matTooltip="Git repository "
+          matTooltipPosition= left
+
+  >
+    <i class="ri-github-fill ri-2x"
+       matRipple
+       [matRippleCentered]="true"></i>
+  </figure>
+  <figure matTooltip="Linkedin profile"
+          matTooltipPosition= left
+  >
+    <i class="ri-linkedin-fill ri-2x"
+       matRipple
+       [matRippleCentered]="true"></i>
+  </figure>
+</section>
+
+<section class="scroll-up"
+         *ngIf = "showScroll"
+         (click)="onScrollTop()"
+>
+  holi
+</section>

@@ -12,6 +12,7 @@
 @mixin Li {
   list-style: none;
   font-weight: bolder;
+  transition: all 0.5s ease-out;
 }
 
 @mixin LiHover {

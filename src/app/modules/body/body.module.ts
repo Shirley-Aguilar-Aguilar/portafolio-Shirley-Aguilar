@@ -12,6 +12,7 @@ import { ContactInformationComponent } from './components/contact-information/co
 import { SkillsComponent } from './components/skills/skills.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatRippleModule} from '@angular/material/core';
+import {InfiniteScrollModule} from "ngx-infinite-scroll";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatRippleModule} from '@angular/material/core';
     NgOptimizedImage,
     RouterModule,
     MatTooltipModule,
-    MatRippleModule
+    MatRippleModule,
+    InfiniteScrollModule
   ],
   providers: []
 })
