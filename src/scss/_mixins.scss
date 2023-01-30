@@ -19,3 +19,17 @@
   @include BorderAndShadow;
   cursor: pointer;
 }
+
+@mixin romboBorder {
+  border-style: dashed double;
+}
+
+@mixin iconStyle {
+  i {
+    color: var(--btn-color);
+    cursor: pointer;
+  }
+  i:hover {
+    color: var(--btn-color-hover);
+  }
+}

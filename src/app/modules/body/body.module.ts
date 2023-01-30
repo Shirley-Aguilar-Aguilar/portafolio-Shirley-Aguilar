@@ -13,6 +13,7 @@ import { SkillsComponent } from './components/skills/skills.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatRippleModule} from '@angular/material/core';
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {InfiniteScrollModule} from "ngx-infinite-scroll";
     RouterModule,
     MatTooltipModule,
     MatRippleModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    MatSlideToggleModule
   ],
   providers: []
 })

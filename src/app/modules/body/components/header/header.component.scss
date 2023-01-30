@@ -1,44 +1,48 @@
 @use "_helpers" as h;
 
 :host {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  @include h.BorderAndShadow;
-  background-color: h.$yellowColor;
   height: 10vh;
   width: 100%;
-  position:fixed;
+  position: fixed;
   top: 0;
   padding: 0 5%;
 
-  .logo {
-    height:8vh;
-    border-radius:8px;
-    img {
-      height:100%;
-      cursor:pointer;
-    }
+ .rombo {
+   width: 5vh;
+   height: 5vh;
+   transform: rotate(45deg);
+   border-radius: 2px;
+   color: var(--btn-color);
+   cursor:pointer;
+   border: 4px solid var(--btn-color);
 
-  }
-  .logo:hover {
-    box-shadow: 3px 3px 5px rgba(224, 224, 224, 0.59);
-    @include h.BorderAndShadow;
-    transition: all 0.5s ease-out;
-  }
+   @include h.romboBorder;
 
+   div {
+     width: 100%;
+     height: 100%;
+     @include h.FlexCenter;
+     font-family: 'Source Sans Pro', sans-serif;
+     transform: rotate(-45deg);
+     font-size: x-large;
+     transition: all 0s ease-in-out;
+   }
+ }
+  .rombo:hover {
+    color: var(--btn-color-hover);
+    border: 4px solid var(--btn-color-hover);
+    @include h.romboBorder;
+  }
 }
 
 .container-symbol {
-  i {
-    color: white;
-    cursor: pointer;
-  }
-
-  i:hover {
-    color: h.$letterColor;
-    transition: all 0.5s ease-out;
-  }
+  @include h.iconStyle;
+}
+.container-btn-light {
+  @include h.iconStyle;
 }
 
 .nav-mobile {
@@ -46,12 +50,13 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: white;
+  background-color: var(--background-color);
   top: 10vh;
   width: 100vw;
   left: 0;
   height: 0;
   position: inherit;
+  z-index: 11;
 
   li {
     @include h.FlexCenter;
@@ -60,23 +65,21 @@
     visibility: hidden;
     height: 16%;
     position: relative;
-    z-index: 4;
-    color: h.$letterColor;
+    z-index: 11;
+    color: var(--btn-color);
   }
 
   li:hover {
-    background-color: h.$transparentColor;
     cursor: pointer;
-    color: white;
+    color: var(--btn-color-hover);
     @include h.LiHover;
   }
 }
 
-
 .show-items {
-  height:100%;
+  height: 100%;
   transition: 0.4s;
-  display:flex !important;
+  display: flex !important;
   li {
     visibility: visible;
   }
@@ -87,17 +90,16 @@
   display: none;
   justify-content: flex-end;
   align-items: center;
-  transform: translate(35%, 0);
-  transition: all 0.5s ease-out;
+  transform: translateX(26%);
   animation: slide 1s 1 linear;
 
   li {
     width: 20%;
-    color: white;
+    color: var(--btn-color);
     text-align: center;
     padding: 16px 0;
     @include h.Li;
-    @media (min-width: 700px) {
+    @media (min-width: 800px) {
       border-bottom: 2px solid transparent;
     }
     @media (min-width: 1200px) {
@@ -106,58 +108,58 @@
   }
 
   li:hover {
-    transition: 0.2s;
-    color: black;
-    border-bottom: 1px solid h.$letterColor;
+    color: var(--btn-color-hover);
+    border-bottom: 1px solid var(--btn-color-hover);
     cursor: pointer;
-    transition: all 0.5s ease-out;
   }
 }
 
 @keyframes slide {
   from {
-    transform: translate(10%, 0%);
+    transform: translateX(10%);
   }
   to {
-    transform: translate(35%, 0%);
+    transform: translateX(26%);
   }
 }
 
 .container-logos {
   position: fixed;
   bottom: 0px;
-  width: 60px;
-  height:25%;
+  width: 100%;
+  height: 15%;
   z-index: 10;
-  right:5%;
-  display:flex;
-  flex-direction: column;
+  display: flex;
   justify-content: space-evenly;
+  @media (min-width: 700px) {
+    flex-direction: column;
+    height: 25%;
+    right: 5%;
+    width: 60px;
+  }
+
   figure {
     @include h.FlexCenter;
     i {
       @include h.FlexCenter;
-      color: white;
       cursor: pointer;
-      height:50px;
-      width:50px;
-      border-radius:50%;
-      background-color: h.$yellowColor;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      color: var(--btn-color);
     }
 
     i:hover {
-      color: h.$letterColor;
-      transition: all 0.5s ease-out;
+      color: var(--btn-color-hover);
     }
   }
-
 }
 
 .scroll-up {
   position: fixed;
   bottom: 0;
   width: 60px;
-  height:5%;
+  height: 5%;
   z-index: 10;
-  left:50%;
+  left: 50%;
 }

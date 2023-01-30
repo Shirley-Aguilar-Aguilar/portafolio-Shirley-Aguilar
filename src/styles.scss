@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Mulish&display=swap");
-@import "_colors";
-@import url('https://fonts.googleapis.com/css2?family=Unbounded:wght@700&display=swap');
+@use "_helpers" as h;
+@import url('https://fonts.googleapis.com/css2?family=Mulish&family=Source+Sans+Pro:wght@900&family=Unbounded:wght@700&display=swap');
 * {
   border: 0;
   margin: 0;
   padding: 0;
   font-family: "Mulish", sans-serif;
   box-sizing: border-box;
+  transition: all 0.5s ease-in-out;
  /* border: 1px solid red;*/
 }
 
@@ -15,6 +15,32 @@ body {
   width: 100%;
   height: 100%;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
+.light-theme {
+  --background-color: white;
+  --btn-color: #3F0071;
+  --btn-color-hover: #FB2576;
+  --title-color: #FB2576;
+  --subtitle-color: #3F0071;
+  --text-color: #150050;
+  --shadow:black;
+}
+
+.dark-theme {
+  --background-color: black;
+  --btn-color: white;
+  --btn-color-hover: #3F0071;
+  --title-color: #FB2576;
+  --subtitle-color: #3F0071;
+  --text-color: white;
+  --shadow:white;
+}
+
+body {
+background-color: var(--background-color);
+}
+

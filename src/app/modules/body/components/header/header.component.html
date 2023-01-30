@@ -1,14 +1,22 @@
-<figure
-  routerLink = "/"
-  matRipple
-  [matRippleCentered]="true"
-  class="logo"
+<div class="rombo"
+     routerLink = "/"
+     matRipple
+     [matRippleCentered]="true"
+     matTooltip="Home"
+     matTooltipPosition= below
 >
-  <img
-    src="assets/img/logo-white.png"
-    alt="white logo "
-  >
-</figure>
+  <div>S</div>
+</div>
+
+<div class="container-btn-light">
+  <i
+     [ngClass]="{
+     'ri-moon-fill ri-xl': theme === 'light-theme',
+     'ri-sun-fill ri-2x': !(theme === 'light-theme')
+     }"
+     (click) = "switchTheme()"
+  ></i>
+</div>
 
 <nav
   #list
@@ -27,7 +35,7 @@
 
 <figure  class="container-symbol">
   <i
-    (click)="showNav(list)" class="ri-stack-line ri-3x"
+    (click)="showNav(list)" class="ri-stack-line ri-2x"
     matRipple
     [matRippleCentered]="true"
   ></i>
