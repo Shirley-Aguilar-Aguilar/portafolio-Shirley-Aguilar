@@ -1,0 +1,27 @@
+@use 'helpers' as h;
+.rombo {
+  width: 100%;
+  height: 100%;
+  transform: rotate(45deg);
+  border-radius: 2px;
+  color: var(--btn-color);
+  cursor:pointer;
+  border: 4px solid var(--btn-color);
+
+  @include h.romboBorder;
+
+  div {
+    width: 100%;
+    height: 100%;
+    @include h.FlexCenter;
+    font-family: 'Source Sans Pro', sans-serif;
+    transform: rotate(-45deg);
+    font-size: x-large;
+    transition: all 0s ease-in-out;
+  }
+}
+.rombo:hover {
+  color: var(--btn-color-hover);
+  border: 4px solid var(--btn-color-hover);
+  @include h.romboBorder;
+}

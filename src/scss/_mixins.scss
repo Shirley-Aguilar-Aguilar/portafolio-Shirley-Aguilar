@@ -31,5 +31,6 @@
   }
   i:hover {
     color: var(--btn-color-hover);
+    transition: all 0.2s ease-in-out;
   }
 }

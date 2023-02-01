@@ -11,8 +11,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height:100vh;
-  margin:5%;
+  height:100%;
 
   @media (min-width: 700px) {
     margin: 0 15%;
@@ -31,6 +30,7 @@
   figure {
     height:250px;
     width: 250px;
+    animation: slide 3s 5s ease-in-out;
     @include h.FlexCenter;
 
     @media (min-width: 700px) {
@@ -62,6 +62,7 @@
     font-weight: bold;
     padding:8px;
     border-radius: 8px;
+    animation: slide 3s 5s ease-in-out;
 
     h1 {
       font-weight:bolder;
@@ -98,4 +99,11 @@
   }
 }
 
-
+@keyframes slide {
+  from {
+    transform: translateX(-40%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}

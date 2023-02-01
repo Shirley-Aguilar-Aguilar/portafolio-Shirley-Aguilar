@@ -1,12 +1,4 @@
-<div class="rombo"
-     routerLink = "/"
-     matRipple
-     [matRippleCentered]="true"
-     matTooltip="Home"
-     matTooltipPosition= below
->
-  <div>S</div>
-</div>
+<app-logo></app-logo>
 
 <div class="container-btn-light">
   <i
@@ -35,9 +27,11 @@
 
 <figure  class="container-symbol">
   <i
+    [hidden] = "expansionPanel"
     (click)="showNav(list)" class="ri-stack-line ri-2x"
     matRipple
     [matRippleCentered]="true"
+    matTooltip="Menu"
   ></i>
 </figure>
 
