@@ -30,7 +30,6 @@
   figure {
     height:250px;
     width: 250px;
-    animation: slide 3s 5s ease-in-out;
     @include h.FlexCenter;
 
     @media (min-width: 700px) {
@@ -62,7 +61,6 @@
     font-weight: bold;
     padding:8px;
     border-radius: 8px;
-    animation: slide 3s 5s ease-in-out;
 
     h1 {
       font-weight:bolder;
@@ -95,15 +93,6 @@
         margin:8px 0;
       }
     }
-
   }
 }
 
-@keyframes slide {
-  from {
-    transform: translateX(-40%);
-  }
-  to {
-    transform: translateX(0%);
-  }
-}

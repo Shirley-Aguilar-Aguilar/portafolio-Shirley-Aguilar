@@ -14,6 +14,7 @@ html,
 body {
   width: 100%;
   height: 100%;
+  background-color: var(--background-color);
 }
 
 html {
@@ -40,7 +41,4 @@ html {
   --shadow:white;
 }
 
-body {
-background-color: var(--background-color);
-}
 

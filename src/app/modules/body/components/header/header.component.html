@@ -1,39 +1,42 @@
-<app-logo></app-logo>
+<div class="nav animate__animated animate__fadeInDown animate__delay-6s">
+  <app-logo></app-logo>
 
-<div class="container-btn-light">
-  <i
-     [ngClass]="{
+  <div class="container-btn-light">
+    <i
+      [ngClass]="{
      'ri-moon-fill ri-xl': theme === 'light-theme',
      'ri-sun-fill ri-2x': !(theme === 'light-theme')
      }"
-     (click) = "switchTheme()"
-  ></i>
+      (click) = "switchTheme()"
+    ></i>
+  </div>
+
+  <nav
+    #list
+    [ngClass]="{ 'nav-desktop': expansionPanel, 'nav-mobile': !expansionPanel }"
+  >
+
+    <li
+      *ngFor="let section of sections"
+      [routerLink]="section.split(' ').join('-')"
+      matRipple
+      [matRippleCentered]="true"
+    >
+      {{ section | titlecase }}
+    </li>
+  </nav>
+
+  <figure  class="container-symbol">
+    <i
+      [hidden] = "expansionPanel"
+      (click)="showNav(list)" class="ri-stack-line ri-2x"
+      matRipple
+      [matRippleCentered]="true"
+      matTooltip="Menu"
+    ></i>
+  </figure>
 </div>
 
-<nav
-  #list
-  [ngClass]="{ 'nav-desktop': expansionPanel, 'nav-mobile': !expansionPanel }"
->
-
-  <li
-    *ngFor="let section of sections"
-    [routerLink]="section.split(' ').join('-')"
-    matRipple
-    [matRippleCentered]="true"
-  >
-    {{ section | titlecase }}
-  </li>
-</nav>
-
-<figure  class="container-symbol">
-  <i
-    [hidden] = "expansionPanel"
-    (click)="showNav(list)" class="ri-stack-line ri-2x"
-    matRipple
-    [matRippleCentered]="true"
-    matTooltip="Menu"
-  ></i>
-</figure>
 
 <section class="container-logos">
   <figure  matTooltip="Curriculum vitae"

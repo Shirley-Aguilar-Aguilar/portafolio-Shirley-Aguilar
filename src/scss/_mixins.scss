@@ -16,7 +16,6 @@
 }
 
 @mixin LiHover {
-  @include BorderAndShadow;
   cursor: pointer;
 }
 

@@ -38,6 +38,7 @@
               "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "src/styles.scss",
               "node_modules/remixicon/fonts/remixicon.css"
+
             ],
             "scripts": []
           },
