@@ -3,12 +3,14 @@
 .nav {
   display: flex;
   justify-content: space-between;
+  background-color: var(--background-color);
   align-items: center;
   height: 8vh;
   width: 100%;
   position: fixed;
   top: 0;
   padding: 0 5%;
+  z-index: 5;
   border-bottom: solid 1px rgba(125, 126, 154, 0.3);
   box-shadow:
     0px 14px 12px -3px rgba(52, 52, 52, 0.11)
@@ -33,7 +35,6 @@ app-logo {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  background-color: var(--background-color);
   top: 10vh;
   width: 100vw;
   left: 0;
@@ -49,7 +50,7 @@ app-logo {
     height: 16%;
     position: relative;
     z-index: 11;
-    color: var(--btn-color);
+    color: var(--subtitle-color);
   }
 
   li:hover {
@@ -76,7 +77,7 @@ app-logo {
 
   li {
     width: 20%;
-    color: var(--btn-color);
+    color: var(--subtitle-color);
     text-align: center;
     padding: 16px 0;
     @include h.Li;
@@ -98,12 +99,13 @@ app-logo {
 
 @keyframes fadeInDown {
   from {
-    transform: translateY(-80%);
+    transform: translateY(-90%);
   }
   to {
     transform: translateY(0%);
   }
 }
+
 
 .container-logos {
   position: fixed;
@@ -121,23 +123,28 @@ app-logo {
     width: 60px;
 
   }
-  animation: fadeInDown 3s 5s ease-in-out;
-  figure {
-    @include h.FlexCenter;
+  animation: fadeInUp 3s 5s ease-in-out;
 
-    i {
+  a {
+    text-decoration:none;
+    figure {
       @include h.FlexCenter;
-      cursor: pointer;
-      height: 50px;
-      width: 50px;
-      border-radius: 50%;
-      color: var(--btn-color);
-    }
 
-    i:hover {
-      color: var(--btn-color-hover);
+      i {
+        @include h.FlexCenter;
+        cursor: pointer;
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        color: var(--btn-color);
+      }
+
+      i:hover {
+        color: var(--btn-color-hover);
+      }
     }
   }
+
 }
 
 .scroll-up {

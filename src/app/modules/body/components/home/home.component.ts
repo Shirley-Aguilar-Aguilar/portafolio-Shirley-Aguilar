@@ -23,13 +23,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     const writer = new Typewriter(target, {
       loop: true,
-      typeColor: '#FB2576'
+      typeColor: 'var(--title-color)',
+      typeClass: 'type-span',
     })
 
     writer
       .changeCursorColor('white')
+      .changeTypeClass('title')
       .type('Shirley Aguilar')
-      .rest(5000)
+      .rest(6000)
       .start()
 
   }

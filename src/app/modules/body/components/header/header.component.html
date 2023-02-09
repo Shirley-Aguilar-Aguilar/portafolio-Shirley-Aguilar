@@ -4,8 +4,8 @@
   <div class="container-btn-light">
     <i
       [ngClass]="{
-     'ri-moon-fill ri-xl': theme === 'light-theme',
-     'ri-sun-fill ri-2x': !(theme === 'light-theme')
+     'ri-moon-fill ri-xl': theme === 'light-theme2',
+     'ri-sun-fill ri-2x': !(theme === 'light-theme2')
      }"
       (click) = "switchTheme()"
     ></i>
@@ -18,11 +18,11 @@
 
     <li
       *ngFor="let section of sections"
-      [routerLink]="section.split(' ').join('-')"
       matRipple
       [matRippleCentered]="true"
-    >
+    ><a [href]="'#'+ section.split(' ').join('-')">
       {{ section | titlecase }}
+    </a>
     </li>
   </nav>
 
@@ -39,29 +39,17 @@
 
 
 <section class="container-logos">
-  <figure  matTooltip="Curriculum vitae"
-           matTooltipPosition= left
-  >
-    <i class="ri-folder-user-line ri-2x"
-       matRipple
-       [matRippleCentered]="true"></i>
-  </figure >
-
-  <figure matTooltip="Git repository "
-          matTooltipPosition= left
-
-  >
-    <i class="ri-github-fill ri-2x"
-       matRipple
-       [matRippleCentered]="true"></i>
-  </figure>
-  <figure matTooltip="Linkedin profile"
-          matTooltipPosition= left
-  >
-    <i class="ri-linkedin-fill ri-2x"
-       matRipple
-       [matRippleCentered]="true"></i>
-  </figure>
+  <ng-container *ngFor="let item of items">
+    <a [href]="item.link" target="_blank">
+      <figure  [matTooltip]="item.tooltip"
+               matTooltipPosition= left
+      >
+        <i [class]="item.icon"
+           matRipple
+           [matRippleCentered]="true"></i>
+      </figure >
+    </a>
+  </ng-container>
 </section>
 
 <section class="scroll-up"

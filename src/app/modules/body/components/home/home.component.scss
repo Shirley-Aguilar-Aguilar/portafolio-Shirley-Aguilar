@@ -1,9 +1,11 @@
 @use "_helpers" as h;
 
 :host {
-  margin-top: 10vh;
   width:100%;
-  height: min-content;
+  height: 600vh;
+}
+:host ::-webkit-scrollbar:vertical {
+  width:10px;
 }
 
 .content-information {
@@ -11,10 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height:100%;
-
   @media (min-width: 700px) {
-    margin: 0 15%;
     display:grid;
     grid-template-columns: 55% 45%;
   }
@@ -22,16 +21,13 @@
   @media (min-width: 1200px) {
     grid-template-columns: 40% 60%;
   }
-
-  @media (min-width: 1400px) {
-    margin: 0 20%;
-  }
+  @include h.marginSection;
 
   figure {
     height:250px;
     width: 250px;
     @include h.FlexCenter;
-
+    animation: fadeInLeft 4s 5s ease-in-out;
     @media (min-width: 700px) {
       height:400px;
       width: 400px;
@@ -61,11 +57,17 @@
     font-weight: bold;
     padding:8px;
     border-radius: 8px;
+    animation: fadeInRight 4s 5s ease-in-out;
 
     h1 {
-      font-weight:bolder;
+      font-size: 24px;
       margin: 16px 0;
-      color: var(--title-color);
+      ::ng-deep {
+        .title {
+          font-family: 'Source Sans Pro', sans-serif;
+          font-weight: 900 !important;
+        }
+      }
     }
 
     h3 {
@@ -96,3 +98,15 @@
   }
 }
 
+
+.about {
+  @include h.marginSection;
+
+}
+.skills {
+  @include h.marginSection;
+}
+
+.contact-me {
+  @include h.marginSection;
+}

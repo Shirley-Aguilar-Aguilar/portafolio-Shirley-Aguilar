@@ -16,7 +16,24 @@ export class HeaderComponent implements OnInit {
   sections = ['about', 'skills', 'portfolio', 'contact me'];
   expansionPanel = false;
   showScroll = false;
-  theme: Theme = 'light-theme';
+  theme: Theme = 'light-theme2';
+  items: Array<IconsModel> = [
+    {
+      link:'',
+      tooltip:'Curriculum vitae',
+      icon: 'ri-folder-user-line ri-2x'
+    },
+    {
+      link:'',
+      tooltip:'Git repository',
+      icon: 'ri-github-fill ri-2x'
+    },
+    {
+      link:'https://www.linkedin.com/in/shirley-aguilar-aguilar-4584161a9/',
+      tooltip:'Linkedin profile',
+      icon: 'ri-linkedin-fill ri-2x'
+    }
+  ]
   private scrollHeight = 500;
 
   constructor(
@@ -58,10 +75,18 @@ export class HeaderComponent implements OnInit {
   switchTheme() {
     this.document.body.classList.replace(
       this.theme,
-      this.theme === 'light-theme'
-        ? (this.theme = 'dark-theme')
-        : (this.theme = 'light-theme')
+      this.theme === 'light-theme2'
+        ? (this.theme = 'dark-theme2')
+        : (this.theme = 'light-theme2')
     );
   }
+
+
 }
-export type Theme = 'light-theme' | 'dark-theme';
+export type Theme = 'light-theme2' | 'dark-theme2';
+
+class IconsModel {
+  icon: string;
+  tooltip: string;
+  link: string;
+}

@@ -14,9 +14,10 @@ const fadeInOut = trigger('fadeInOut', [
       zIndex:-2,
       color: 'transparent',
       backgroundColor: 'transparent',
+      pointerEvents: 'none'
     })
   ),
-  transition('open => *', [animate('4s ease-in-out')]),
+  transition('open => *', [animate('4s 1s ease-in-out')]),
 ])
 @Component({
   selector: 'app-root',

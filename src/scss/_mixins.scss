@@ -20,7 +20,7 @@
 }
 
 @mixin romboBorder {
-  border-style: dashed double;
+  border-style: solid double;
 }
 
 @mixin iconStyle {
@@ -31,5 +31,43 @@
   i:hover {
     color: var(--btn-color-hover);
     transition: all 0.2s ease-in-out;
+  }
+}
+
+  @keyframes fadeInUp {
+    from {
+      transform: translateY(90%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+@keyframes fadeInLeft {
+  from {
+    transform: translateX(-90%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    transform: translateX(90%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@mixin marginSection {
+  height:100vh;
+  margin-top: 10vh;
+  @media (min-width: 700px) {
+    margin: 0 15%;
+  }
+  @media (min-width: 1400px) {
+    margin: 0 20%;
   }
 }

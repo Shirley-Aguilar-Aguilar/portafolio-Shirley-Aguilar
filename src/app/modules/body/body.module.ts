@@ -15,6 +15,7 @@ import {MatRippleModule} from '@angular/material/core';
 import {InfiniteScrollModule} from "ngx-infinite-scroll";
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {SharedModule} from "../../shared/shared.module";
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import {SharedModule} from "../../shared/shared.module";
     MatRippleModule,
     InfiniteScrollModule,
     MatSlideToggleModule,
-    SharedModule
+    SharedModule,
+    ScrollingModule
   ],
   providers: []
 })
