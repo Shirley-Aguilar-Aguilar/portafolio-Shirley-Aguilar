@@ -4,13 +4,12 @@
   height: 100%;
   transform: rotate(45deg);
   border-radius: 4px;
-  color: var(--logo-header);
   cursor:pointer;
   border: 4px solid var(--logo-header);
 
   @include h.romboBorder;
 
-  div {
+  a {
     width: 100%;
     height: 100%;
     @include h.FlexCenter;
@@ -18,10 +17,14 @@
     transform: rotate(-45deg);
     font-size: x-large;
     transition: all 0s ease-in-out;
+    @include h.styleTagA;
+    color: var(--logo-header);
   }
 }
 .rombo:hover {
-  color: var(--logo-header-hover);
   border: 4px solid var(--logo-header-hover);
   @include h.romboBorder;
+  a {
+    color: var(--logo-header-hover);
+  }
 }

@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
   }
 
 
-
   initEffect = () => {
     const target = this.asName.nativeElement;
 

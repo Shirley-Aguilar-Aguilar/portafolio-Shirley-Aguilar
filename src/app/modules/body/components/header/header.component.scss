@@ -35,14 +35,15 @@ app-logo {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  top: 10vh;
+
+  top: 8vh;
   width: 100vw;
   left: 0;
   height: 0;
   position: inherit;
   z-index: 11;
-
-  li {
+  background-color: var(--background-color);
+  a {
     @include h.FlexCenter;
     @include h.Li;
     width: 100%;
@@ -50,20 +51,26 @@ app-logo {
     height: 16%;
     position: relative;
     z-index: 11;
-    color: var(--subtitle-color);
+
+
+      color: var(--subtitle-color);
+      @include h.styleTagA;
+
+
   }
 
-  li:hover {
+  a:hover {
     cursor: pointer;
-    color: var(--btn-color-hover);
+
+      color: var(--btn-color-hover);
   }
 }
 
 .show-items {
-  height: 100%;
+  height: 70vh;
   transition: 0.4s;
   display: flex !important;
-  li {
+  a {
     visibility: visible;
   }
 }
@@ -75,12 +82,14 @@ app-logo {
   align-items: center;
   transform: translateX(26%);
 
-  li {
+  a {
     width: 20%;
-    color: var(--subtitle-color);
     text-align: center;
     padding: 16px 0;
     @include h.Li;
+    color: var(--subtitle-color);
+    @include h.styleTagA;
+
     @media (min-width: 800px) {
       border-bottom: 2px solid transparent;
     }
@@ -88,10 +97,15 @@ app-logo {
       font-size: large;
     }
 
-    &:hover {
-      color: var(--btn-color-hover);
+
+
+
+    a:hover {
       border-bottom: 1px solid var(--btn-color-hover);
       cursor: pointer;
+
+        color: var(--btn-color-hover);
+
     }
   }
 
@@ -126,7 +140,7 @@ app-logo {
   animation: fadeInUp 3s 5s ease-in-out;
 
   a {
-    text-decoration:none;
+    @include h.styleTagA;
     figure {
       @include h.FlexCenter;
 

@@ -16,14 +16,14 @@
     [ngClass]="{ 'nav-desktop': expansionPanel, 'nav-mobile': !expansionPanel }"
   >
 
-    <li
-      *ngFor="let section of sections"
-      matRipple
-      [matRippleCentered]="true"
-    ><a [href]="'#'+ section.split(' ').join('-')">
+  <a [href]="'#'+ section.split(' ').join('-')"
+        *ngFor="let section of sections"
+        matRipple
+        [matRippleCentered]="true"
+    >
       {{ section | titlecase }}
     </a>
-    </li>
+
   </nav>
 
   <figure  class="container-symbol">
